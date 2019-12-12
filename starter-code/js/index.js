@@ -2,10 +2,28 @@ var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
 
 function updateSubtot($product) {
+  console.log('Button has been clicked');
 
+  let productArr = [...document.getElementsByClassName('products')];
+  
+  productArr.forEach(product => {
+    let qty = product.children[2].value;
+    console.log("Quatity ", qty);
+    let prdct = product.children[1].innerHTML;
+    console.log("Price ", prdct);
+
+    let sub = product.children[3].innerHTML;
+    console.log('Subtotal ', sub);
+
+    sub = qty * prdct;
+    product.children[3].innerHTML = sub;
+    console.log('New Subtotal ', sub);
+  });
 }
 
 function calcAll() {
-  // Iteration 1.2
+
 }
+
 $calc.onclick = calcAll;
+
