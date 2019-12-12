@@ -7,9 +7,9 @@ function updateSubtot($product) {
   let productArr = [...document.getElementsByClassName('products')];
   
   productArr.forEach(product => {
-    let qty = product.children[2].value;
+    let qty = product.children[2].children[0].children[0].value;
     console.log("Quatity ", qty);
-    let prdct = product.children[1].innerHTML;
+    let prdct = product.children[1].children[0].children[0].innerHTML;
     console.log("Price ", prdct);
 
     let sub = product.children[3].innerHTML;
